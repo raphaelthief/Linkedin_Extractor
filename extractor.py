@@ -29,7 +29,7 @@ banner = f'''
    ░    ░    ░    ░        ░░   ░   ░   ▒   ░          ░      ░ ░ ░ ▒    ░░   ░ 
    ░  ░ ░    ░              ░           ░  ░░ ░                   ░ ░     ░     
                                             ░                                   
-                                                       {Y}<{C}raphaelthief{Y}>{G}
+                                                                  {Y}<{C}raphaelthief{Y}>{G}
 '''
 
 
@@ -122,26 +122,27 @@ def main():
 
     if args.show_all:
         for profile in profile_data:
-            print(f"Name: {profile['Name']}")
-            print(f"LinkedIn Profile: {profile['LinkedIn Profile']}")
-            print(f"Title: {profile['Title']}")
-            print(f"Common Relation: {profile['Common Relation']}")
+            print(f"{G}Name             :{C} {profile['Name']}")
+            print(f"{G}LinkedIn Profile :{Y} {profile['LinkedIn Profile']}")
+            print(f"{G}Title            :{R} {profile['Title']}")
+            print(f"{G}Common Relation  :{Y} {profile['Common Relation']}")
             print("-" * 40)
 
     if args.names:
         for profile in profile_data:
-            print(f"{profile['Name']}")
+            print(f"{G}{profile['Name']}")
 
     if args.convert:
         if '@' not in args.convert:
-            print("Error: The --convert argument must include a domain (e.g., n.p@example.com)")
+            print(f"{R}Error : The --convert argument must include a domain (ex : n.p@example.com)")
+            print(Style.RESET_ALL)
             sys.exit(1)
 
         format_part, domain = args.convert.split('@')
         for profile in profile_data:
             if is_valid_name(profile['Name']):
                 email = convert_to_email(profile['Name'], format_part, domain)
-                print(email)
+                print(f"{G}{email}")
 
     print(Style.RESET_ALL)
 
