@@ -108,7 +108,7 @@ def main():
     parser.add_argument("--show-all", action="store_true", help="Show name, Linkedin profile, title and common relation")
     parser.add_argument("--names", action="store_true", help="Show names")
     parser.add_argument("--convert", help="""Convert all names extracted to email format with all accents removed from the names.
-        Specify domain & format (nom for lastname & prenom for firstname) : nom.prenom@exemple.com (Aviable formats : nom.prenom, n.prenom, n.p, nom.p, prenom.nom, p.nom, p.n, prenom.n)
+        Specify domain & format (nom for lastname & prenom for firstname) : nom.prenom@exemple.com (Aviable formats : nom.prenom, n.prenom, n.p, nom.p, prenom.nom, p.nom, p.n, prenom.n, prenom, nom)
     """)
     args = parser.parse_args()
 
