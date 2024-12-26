@@ -92,7 +92,9 @@ def convert_to_email(name, format, domain):
         "prenom.nom": f"{first_name}.{last_name}@{domain}",
         "p.nom": f"{first_name[0].lower()}.{last_name}@{domain}",
         "p.n": f"{first_name[0].lower()}.{last_initial}@{domain}",
-        "prenom.n": f"{first_name}.{last_initial}@{domain}"
+        "prenom.n": f"{first_name}.{last_initial}@{domain}",
+        "nom": f"{last_name}@{domain}",
+        "prenom": f"{first_name}@{domain}"
     }
     return formats.get(format, f"{last_name}.{first_name}@{domain}")
 
